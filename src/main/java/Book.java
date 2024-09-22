@@ -2,12 +2,14 @@ public class Book {
     private String title;
     private String author;
     private String isbn;
+    private String format;  // New field to track if it's hardcover or paperback
 
     // Constructor
-    public Book(String title, String author, String isbn) {
+    public Book(String title, String author, String isbn, String format) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+        this.format = format;  // Set the book format (hardcover or paperback)
     }
 
     // Getters
@@ -23,13 +25,18 @@ public class Book {
         return isbn;
     }
 
-    // Override toString() to display book details
+    public String getFormat() {  // New getter for the format
+        return format;
+    }
+
+    // Override toString() to display book details, including the format
     @Override
     public String toString() {
         return "Book{" +
                "title='" + title + '\'' +
                ", author='" + author + '\'' +
                ", isbn='" + isbn + '\'' +
+               ", format='" + format + '\'' +  // Display format (hardcover or paperback)
                '}';
     }
 
